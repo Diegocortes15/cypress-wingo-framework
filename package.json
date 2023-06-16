@@ -12,7 +12,7 @@
     "generate:reports": "marge cypress/reports/report.json -f report -o cypress/reports",
     "pretest": "npm run report:clean",
     "posttest": "npm run combine:reports && npm run generate:reports",
-    "test": "npm run pretest && npx cypress run && npm run posttest"
+    "test": "npx cypress run --browser edge"
   },
   "repository": {
     "type": "git",
