@@ -1,0 +1,43 @@
+{
+  "name": "cypress-wingo-framework",
+  "version": "1.0.0",
+  "description": "Technical Assessment QA",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "lint": "eslint ./cypress/e2e/**/*.js",
+    "lint:fix": "npm run lint -- --fix",
+    "report:clean": "rm -r cypress/reports/*",
+    "combine:reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/report.json",
+    "generate:reports": "marge cypress/reports/report.json -f report -o cypress/reports",
+    "pretest": "npm run report:clean",
+    "posttest": "npm run combine:reports && npm run generate:reports",
+    "test" : "npm run pretest && npx cypress run && npm run posttest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diegocortes15/cypress-wingo-framework.git"
+  },
+  "keywords": [],
+  "author": "Diego Alejandro Cortes Roa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Diegocortes15/cypress-wingo-framework/issues"
+  },
+  "homepage": "https://github.com/Diegocortes15/cypress-wingo-framework#readme",
+  "devDependencies": {
+    "cypress": "^12.14.0",
+    "cypress-mochawesome-reporter": "^3.5.1",
+    "cypress-multi-reporters": "^1.6.3",
+    "cypress-xpath": "^2.0.1",
+    "eslint": "^8.42.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "eslint-plugin-cypress": "^2.13.3",
+    "fs": "^0.0.1-security",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}

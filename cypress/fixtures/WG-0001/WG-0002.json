@@ -1,0 +1,19 @@
+{
+  "testCase": "WG-0002",
+  "testSummary": "Verify flight information tab given have been displayed",
+  "testDescription": "Verify flight information tab given have been displayed",
+  "tags": "@regression @sprint1 @wg-0001 @wg-0002",
+  "homePage": {
+    "departureCity": "BOG",
+    "returnCity": "CLO",
+    "passangers": "2",
+    "departureDate": {
+      "type": "departure",
+      "date": "15/11/2023"
+    },
+    "returnDate": {
+      "type": "return",
+      "date": "20/03/2024"
+    }
+  }
+}
