@@ -7,12 +7,12 @@
     "cypress:open": "cypress open",
     "lint": "eslint ./cypress/e2e/**/*.js",
     "lint:fix": "npm run lint -- --fix",
-    "report:clean": "rm -r cypress/reports/*",
+    "report:clean": "rimraf reports",
     "combine:reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/report.json",
     "generate:reports": "marge cypress/reports/report.json -f report -o cypress/reports",
     "pretest": "npm run report:clean",
     "posttest": "npm run combine:reports && npm run generate:reports",
-    "test" : "npm run pretest && npx cypress run && npm run posttest"
+    "test": "npm run pretest && npx cypress run && npm run posttest"
   },
   "repository": {
     "type": "git",
@@ -38,6 +38,7 @@
     "mocha": "^10.2.0",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.3.0",
-    "mochawesome-report-generator": "^6.2.0"
+    "mochawesome-report-generator": "^6.2.0",
+    "rimraf": "^5.0.0"
   }
 }

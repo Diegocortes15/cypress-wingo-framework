@@ -1,4 +1,11 @@
+import {SupportFactory} from './support-factory.utils';
+
 export class ActionsFactory {
+  _supportFactory;
+  constructor() {
+    this._supportFactory = new SupportFactory();
+  }
+
   waitVisible(elementSelector) {
     cy.get(elementSelector).should('be.visible');
   }
@@ -17,7 +24,24 @@ export class ActionsFactory {
     });
   }
 
+  visit(URL) {
+    cy.visit(URL);
+  }
+
   getElement(elementName) {
     return cy.get(elementName);
+  }
+
+  verifyIseElementLessThan(stringLowElement, stringHighElement) {
+    this.getElement(stringLowElement).invoke('text').as('value1');
+    this.getElement(stringHighElement).invoke('text').as('value2');
+
+    cy.get('@value1').then((value1) => {
+      cy.get('@value2').then((value2) => {
+        expect(this._supportFactory.formatAmount(value1)).to.be.lessThan(
+          this._supportFactory.formatAmount(value2)
+        );
+      });
+    });
   }
 }

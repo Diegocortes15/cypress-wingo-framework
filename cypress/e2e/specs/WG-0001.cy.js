@@ -1,8 +1,8 @@
-import {HomePageMethods} from '../../pages/home-methods.pages';
+import {HomePageMethods} from '../pages/home-methods.pages';
 
 const storyParentId = 'WG-0001';
 
-describe('WG-0001: DatePicker', () => {
+describe('WG-0001: Verify flight information tab', () => {
   let TestCase_1;
   before(() => {
     cy.fixture(`${storyParentId}/WG-0002.json`).then((data) => {
@@ -11,7 +11,7 @@ describe('WG-0001: DatePicker', () => {
   });
 
   it(`Test case: WG-0002 |
-  Description: Verify flight information tab given have been displayed |
+  Description: Verify flight information have been displayed |
   Tags: @regression @sprint1 @wg-0001 @wg-0002`, () => {
     const data = TestCase_1;
     const homePageMethods = new HomePageMethods();
