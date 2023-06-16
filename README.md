@@ -2,6 +2,10 @@
 
 Technical Assessment QA
 
+## Video
+
+[😄 Click here to see the result! 🎉](https://drive.google.com/file/d/1JuuIvYcfQLPPpVoVUsJLioIYJIhVhyHc/view?usp=sharing)
+
 ## Installation
 
 ### Node.js
@@ -36,6 +40,8 @@ npm ci
 
 #### Project overview
 
+![Capture2](https://github.com/Diegocortes15/cypress-wingo-framework/assets/60171460/78856a9e-cf26-442e-b6c6-e0a08ac98d35)
+
 ## Running Tests
 
 To run all tests
@@ -45,3 +51,5 @@ npm run test
 ```
 
 ## Mocha awesome report
+
+![Capture](https://github.com/Diegocortes15/cypress-wingo-framework/assets/60171460/59168a73-ef8f-47bc-b457-3546d9d5ac1b)
