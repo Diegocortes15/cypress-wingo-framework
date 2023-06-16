@@ -11,7 +11,7 @@ export class ActionsFactory {
   }
 
   click(elementName) {
-    cy.get(elementName).scrollIntoView();
+    //cy.get(elementName).scrollIntoView();
     cy.get(elementName).click({
       force: true,
     });
@@ -42,6 +42,18 @@ export class ActionsFactory {
           this._supportFactory.formatAmount(value2)
         );
       });
+    });
+  }
+
+  fillInputText(elementName, strValue) {
+    cy.get(elementName).type(strValue, {
+      force: true,
+    });
+  }
+
+  selectByOption(elementName, strValue) {
+    cy.get(elementName).select(strValue, {
+      force: true,
     });
   }
 }

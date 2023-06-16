@@ -3,8 +3,8 @@ import {SupportFactory} from '../utils/support-factory.utils';
 
 export class HomePageMethods {
   _homeContent;
-  _selectPassangers;
-  _buttonAddPassangers;
+  _selectPassengers;
+  _buttonAddPassengers;
   _selectFlightFrom;
   _optionFlightFrom;
   _selectFlightTo;
@@ -17,8 +17,8 @@ export class HomePageMethods {
   constructor() {
     this._pageURL = 'https://www.wingo.com/';
     this._homeContent = '.content-home';
-    this._selectPassangers = '#selectPasj';
-    this._buttonAddPassangers = '.passenger #adultos ~ .bts-add .plus';
+    this._selectPassengers = '#selectPasj';
+    this._buttonAddPassengers = '.passenger #adultos ~ .bts-add .plus';
     this._selectFlightFrom = '.input-origen .styledSelectOrigen';
     this._optionFlightFrom = '#comboOrigen li[data-cod="${value}"]';
     this._selectFlightTo = '.input-destino .select-drop .select';
@@ -36,7 +36,7 @@ export class HomePageMethods {
 
     this._departureCityText = '.input-origen .styledSelectOrigen';
     this._returnCityText = '.input-destino .styledSelectDestino';
-    this._passangersText = '#tPasajeros';
+    this._passengersText = '#tPasajeros';
     this._departureDateText = '.info-select-start';
     this._returnDateText = '.info-select-end';
 
@@ -49,11 +49,11 @@ export class HomePageMethods {
     this._actionsFactory.waitVisible(this._homeContent);
   }
 
-  passangersToTravel(passangersNumber) {
-    if (passangersNumber < 2) return;
-    this._actionsFactory.click(this._selectPassangers);
-    for (let i = 0; i < passangersNumber - 1; i++) {
-      this._actionsFactory.click(this._buttonAddPassangers);
+  passengersToTravel(passengersNumber) {
+    if (passengersNumber < 2) return;
+    this._actionsFactory.click(this._selectPassengers);
+    for (let i = 0; i < passengersNumber - 1; i++) {
+      this._actionsFactory.click(this._buttonAddPassengers);
     }
   }
 
@@ -172,8 +172,8 @@ export class HomePageMethods {
     return this._actionsFactory.getElement(this._returnCityText);
   }
 
-  getPassangersText() {
-    return this._actionsFactory.getElement(this._passangersText);
+  getPassengersText() {
+    return this._actionsFactory.getElement(this._passengersText);
   }
 
   getDepartureDateText() {

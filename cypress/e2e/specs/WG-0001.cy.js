@@ -17,7 +17,7 @@ describe('WG-0001: Verify flight information tab', () => {
     const homePageMethods = new HomePageMethods();
 
     homePageMethods.goTo();
-    homePageMethods.passangersToTravel(data.homePage.passangers);
+    homePageMethods.passengersToTravel(data.homePage.passengers);
     homePageMethods.selectDepartureFrom(data.homePage.departureCity);
     homePageMethods.selectReturnFrom(data.homePage.returnCity);
     homePageMethods.selectFlightDate(
@@ -36,8 +36,8 @@ describe('WG-0001: Verify flight information tab', () => {
       .getReturnCityText()
       .should('include.text', data.homePage.returnCity);
     homePageMethods
-      .getPassangersText()
-      .should('include.text', data.homePage.passangers);
+      .getPassengersText()
+      .should('include.text', data.homePage.passengers);
     homePageMethods
       .getDepartureDateText()
       .should('include.text', data.homePage.departureDate.date);
