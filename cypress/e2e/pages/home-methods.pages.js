@@ -1,4 +1,5 @@
 import {ActionsFactory} from '../utils/actions-factory.utils';
+import {SupportFactory} from '../utils/support-factory.utils';
 
 export class HomePageMethods {
   _homeContent;
@@ -9,8 +10,9 @@ export class HomePageMethods {
   _selectFlightTo;
   _optionFlightTo;
   _calendarDay;
-  _actionsFactory;
   _selectDate;
+  _actionsFactory;
+  _supportFactory;
 
   constructor() {
     this._pageURL = 'https://www.wingo.com/';
@@ -30,13 +32,16 @@ export class HomePageMethods {
       '.${flightTypeValue} .cont-calendar .month1 .select-wrapper:nth-child(1)';
     this._calendarNextMonth =
       '.${flightTypeValue} .cont-calendar .month2 .next';
+    this._buttonSearchFlight = '.btn-search';
 
     this._departureCityText = '.input-origen .styledSelectOrigen';
     this._returnCityText = '.input-destino .styledSelectDestino';
     this._passangersText = '#tPasajeros';
     this._departureDateText = '.info-select-start';
     this._returnDateText = '.info-select-end';
+
     this._actionsFactory = new ActionsFactory();
+    this._supportFactory = new SupportFactory();
   }
 
   goTo() {

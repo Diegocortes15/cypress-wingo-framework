@@ -1,0 +1,22 @@
+{
+  "testCase": "WG-0004",
+  "testSummary": "Verify GoBasic fee has been selected",
+  "testDescription": "Verify GoBasic fee has been selected",
+  "tags": "@regression @sprint1 @wg-0003 @wg-0004",
+  "homePage": {
+    "departureCity": "BOG",
+    "returnCity": "CLO",
+    "passangers": "2",
+    "departureDate": {
+      "type": "departure",
+      "date": "15/11/2023"
+    },
+    "returnDate": {
+      "type": "return",
+      "date": "20/03/2024"
+    }
+  },
+  "bookingPage": {
+    "fee": "GO BASIC"
+  }
+}
