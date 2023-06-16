@@ -50,6 +50,12 @@ To run all tests
 npm run test
 ```
 
-## Mocha awesome report
+To generate Mochawesome report
+
+```bash
+npm run posttest
+```
+
+## Mochawesome report
 
 ![Capture](https://github.com/Diegocortes15/cypress-wingo-framework/assets/60171460/59168a73-ef8f-47bc-b457-3546d9d5ac1b)
