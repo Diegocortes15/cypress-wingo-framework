@@ -6,10 +6,19 @@ export class BookingPageMethods {
   _actionsFactory;
   _supportFactory;
   _faresContent;
+  _firstDepartureFlight;
+  _departureGoBasicCard;
+  _firstDepartureFlightFareSelected;
+  _firstReturnFlight;
+  _firstReturnFlightFareSelected;
+  _departureGoBasicAmount;
+  _departureGoPlusAmount;
+  _departureGoPremiumAmount;
+  _buttonContinue;
 
   constructor() {
     this._pageURL =
-      'https://booking.wingo.com/es/search/${departureCity}/${returnCity}/${formatDepartureDate}/${formatReturnDate}/${passangers}/0/0/0/COP/0/0';
+      'https://booking.wingo.com/es/search/${departureCity}/${returnCity}/${formatDepartureDate}/${formatReturnDate}/${passengers}/0/0/0/COP/0/0';
     this._faresContent = '.tarifas .content';
     this._firstDepartureFlight = '#vuelos-ida > div:nth-child(1)';
     this._departureGoBasicCard =
@@ -30,7 +39,7 @@ export class BookingPageMethods {
     this._departureGoPremiumAmount =
       '#vuelos-regreso .card  .card-list-bundle > .bundle-container:nth-child(3) .price-bundle';
 
-    this._buttonContinue = '.continue ,btn-continuar';
+    this._buttonContinue = '.continue .btn-continuar';
 
     this._actionsFactory = new ActionsFactory();
     this._supportFactory = new SupportFactory();
@@ -44,7 +53,7 @@ export class BookingPageMethods {
       dataJson.homePage.returnDate.date
     );
     this._actionsFactory.visit(
-      `https://booking.wingo.com/es/search/${dataJson.homePage.departureCity}/${dataJson.homePage.returnCity}/${formatDepartureDate}/${formatReturnDate}/${dataJson.homePage.passangers}/0/0/0/COP/0/0`
+      `https://booking.wingo.com/es/search/${dataJson.homePage.departureCity}/${dataJson.homePage.returnCity}/${formatDepartureDate}/${formatReturnDate}/${dataJson.homePage.passengers}/0/0/0/COP/0/0`
     );
     this._actionsFactory.waitVisible(this._faresContent);
   }
@@ -57,6 +66,10 @@ export class BookingPageMethods {
   selectCheapestReturnFlight() {
     this._actionsFactory.click(this._firstReturnFlight);
     this._actionsFactory.click(this._returnGoBasicCard);
+  }
+
+  clickButtonContinue() {
+    this._actionsFactory.click(this._buttonContinue);
   }
 
   getFirstDepartureFlightFareSelected() {

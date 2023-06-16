@@ -6,7 +6,7 @@
   "homePage": {
     "departureCity": "BOG",
     "returnCity": "CLO",
-    "passangers": "2",
+    "passengers": "2",
     "departureDate": {
       "type": "departure",
       "date": "15/11/2023"

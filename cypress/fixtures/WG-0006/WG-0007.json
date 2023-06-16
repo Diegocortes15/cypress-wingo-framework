@@ -18,5 +18,25 @@
   },
   "bookingPage": {
     "fee": "GO BASIC"
+  },
+  "customizePage": {
+    "passengers": [
+      {
+        "firstName": "John",
+        "lastName": "Doe",
+        "gender": "M",
+        "birthdate": "15/07/2001",
+        "email": "john.doe@example.com",
+        "phone": "9876543210",
+        "id": "ABC123"
+      },
+      {
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "gender": "F",
+        "birthdate": "25/03/1990",
+        "id": "XYZ789"
+      }
+    ]
   }
 }
