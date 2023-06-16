@@ -1,6 +1,12 @@
 name: Continuous integration
 
-on: [pull_request]
+on:
+  push:
+    branches:
+      - main  # Replace with your branch name
+  pull_request:
+    branches:
+      - main  # Replace with your branch name
 
 jobs:
   cypress-run:
