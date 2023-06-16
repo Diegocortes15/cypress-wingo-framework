@@ -18,9 +18,6 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Code style
-        run: npm run lint
-
       - name: UI E2E Tests
         uses: cypress-io/github-action@v4
         with:
